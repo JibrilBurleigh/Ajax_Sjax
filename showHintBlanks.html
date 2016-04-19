@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+<script>
+function showHint(str) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "getHint.php?str=" + str, false); //is this AJAX or SJAX?
+    xmlhttp.send();
+    document.getElementById("txtHnt").innerHTML = xmlhttp.responseText;
+}
+</script>
+</head>
+<body>
+First name: <input type="text" onkeyup="showHint(this.value)">
+<p>Suggestions: <span id="txtHnt"></span></p>
+</body>
+</html> 
